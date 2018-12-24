@@ -1,0 +1,10 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-gfm"
+    ]
+    uriHandlerRegistration: "always"
+  editor:
+    fontSize: 11
+  "exception-reporting":
+    userId: "7c6f407b-4029-45c6-a336-34f868b20690"
