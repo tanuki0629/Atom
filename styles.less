@@ -1,32 +1,134 @@
-/*
- * Your Stylesheet
- *
- * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed and saved.
- *
- * Add your own CSS or Less to fully customize Atom.
- * If you are unfamiliar with Less, you can read more about it here:
- * http://lesscss.org
- */
+
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+// サイドバーTOCを左上にする
 
 
-/*
- * Examples
- * (To see them, uncomment and save)
- */
 
-// style the background color of the tree view
-.tree-view {
-  // background-color: whitesmoke;
-}
 
-// style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
-}
+.markdown-preview.markdown-preview {
 
-// style UI elements inside atom-text-editor
-atom-text-editor .cursor {
-  // border-color: red;
-}
+  @c_border: #666; // border-color
+  background: #eee !important;
+  p, h1, h2, h3, h4, h5, h6, li, th, td, strong {
+    color: black !important;
+//    color: white !important;
+//    color: white ;
+
+  }
+  hr {
+    margin: 20px 0;
+    background-color: transparent;
+    &:after{
+      content: "";
+      display: block;
+      border-top-style: ridge;
+    }
+    &.pb {
+      // <hr class="pb">を入れる事で、
+      // プリント時の改ページを指定することができる。
+      page-break-after: always;
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  font-family: 'Ricty Diminished Discord';
+//    font-family: 'Meiryo UI';
+  font-size: 11px !important;  //@Note PC
+//  font-size: 12px !important;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+//    border-color: @c_border;
+    border-color: @c_border;
+
+  }
+  h1 {
+  //----- 左に縦線が入ったバージョン -----//
+  // https://saruwakakun.com/html-css/reference/h-design
+    color: #010079 ;
+    // 青線の幅
+    border-left: solid 7px #010079;
+    // 設定
+    font-size: 16px ;
+    font-weight: bold;
+    font-family: 'Meiryo UI';
+    // 文字まわり（上下左右）の余白
+    padding: 0.5em !important;
+    margin: 16px auto;
+    text-align:left;
+    letter-spacing: 4px
+   }
+   h2 {
+
+     // 文字まわり（上下左右）の余白
+     font-size: 16px ;
+     padding: 0.5em !important;
+     margin: 16px auto;
+     text-align:left;
+     letter-spacing: 4px
+   }
+
+
+   h3 {
+//      font-size: 16px !important;
+     font-size: 14px !important;  //@Note PC
+     font-weight: bold;
+     margin-bottom: 10px;
+     margin: 5px auto 2px;
+   }
+   h4 {
+//     font-size: 16px !important;
+    font-size: 14px !important;  //@Note PC
+     letter-spacing: 3px;
+      margin: 20px auto 15px;
+   }
+
+   p, table, ul, ol, dl, pre, blockquote {
+      margin-left: 25px;
+      ul, ol, dl {
+        margin-left: 0px;
+      }
+    }
+   table {
+     border-collapse: collapse;
+     border-spacing: 0;
+     max-width: 800px;
+     th {
+       text-align: center;
+//       background-color: #222;
+//       border-color: @c_border;
+     }
+     tr {
+       border-top: #666;
+     }
+     td {
+       border-color: @c_border;
+     }
+   }
+   .margin-clear {
+     margin-left: 0;
+   }
+   // テキストの中央揃え
+   .center {
+     text-align: center;
+     &:extend(.margin-clear);
+   }
+   // テキストの右寄せ
+   .right {
+     text-align: right;
+     &:extend(.margin-clear);
+   }
+   .md-sidebar-toc.md-sidebar-toc {
+    padding-top: 40px  !important;
+   }
+
+   #sidebar-toc-btn {
+    bottom: unset !important;
+    top: 8px !important;
+   }
+
+
+ }
